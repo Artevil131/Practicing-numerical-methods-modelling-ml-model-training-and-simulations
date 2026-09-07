@@ -1,3 +1,31 @@
+# C / C++ build output
+*.o
+*.out
+*.dSYM/
+a.out
+basics
+# course exercise/example binaries
+ex_demo
+# algorithm / CP solutions: keep sources, ignore compiled binaries next to them
+**/solutions/**
+!**/solutions/**/
+!**/solutions/**/*.c
+!**/solutions/**/*.cpp
+!**/solutions/**/*.txt
+!**/solutions/**/*.md
+sol
+brute
+gen
+**/ex[0-9][0-9]_[0-9]*
+!**/ex[0-9][0-9]_[0-9]*.c
+!**/ex[0-9][0-9]_[0-9]*.cpp
+build/
+# compiled binaries live next to their .c file — name them after the source
+neural_network_c/tokenization
+neural_network_c/matrix
+numerical_methods/*/bin/
+simulations/*/bin/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]

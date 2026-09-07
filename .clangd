@@ -1,0 +1,19 @@
+# clangd config for the IDE (VS Code / clangd extension).
+# Makes IDE diagnostics match the command-line flags used in the courses.
+---
+If:
+  PathMatch: .*\.c
+CompileFlags:
+  Add: [-std=c11, -Wall, -Wextra]
+---
+If:
+  PathMatch: .*\.(cpp|cc|cxx|hpp)
+CompileFlags:
+  Add: [-std=c++17, -Wall, -Wextra]
+---
+# Advanced C++ chapters and competitive programming use C++20 features and the bits/stdc++.h shim.
+If:
+  PathMatch: .*/(cpp_learning/(1[4-9]|20)_[^/]*|competitive_programming)/.*\.(cpp|hpp)
+CompileFlags:
+  Add: [-std=c++20, -I/Users/artevil/Practicing-numerical-methods-modelling-ml-model-training-and-simulations/learning/competitive_programming/include]
+  Remove: [-std=c++17]
